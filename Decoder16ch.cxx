@@ -13,7 +13,7 @@
 
 
 
-const int lengths = 2048+1; // number of data points for each event
+const int lengths = 2048+1; // number of data points for each event (target length PLUS ONE)
 const int interval = 8; // 8 ns (125 MHz)
 const uint64_t timing_offset = 0x100000000;
 
