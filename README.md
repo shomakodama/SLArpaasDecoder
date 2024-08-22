@@ -43,7 +43,7 @@ One python script `Decoder1ch.py` is just reading all lines and showing them in 
 ## Output
 
 The outout root file has one TTree.
-The TTree has 8 branches.
+The TTree has (5+number of channels) branches.
 Click below to show these branches.
 
 <details>
