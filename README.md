@@ -30,6 +30,9 @@ name|description
 length|sample length
 interval|clock interval (should be 8 ns)
 timing_offset|timing is split into 2 lines (32-bits*2, should be 0x100000000)
+fname|input file name
+ofilename|output file name
+plotevent|saving waveform or not (1: save)
 
 </details>
 
