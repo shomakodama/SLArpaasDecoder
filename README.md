@@ -58,6 +58,14 @@ internalevent|event number counting by the digitizer module (uint32_t)
 ADCX|data points (int)
 eventflag|event flag (int)
 
+The difference between the event and internalevent is constant in one file.
+These show the number of triggers, not the number of sending data.
+
+Only the ADCX is the array of data.
+
+The eventflag is 2 if the event has a missing point.
+It is 1 if the event has a point outside the dynamic range.
+
 </details>
 
 
