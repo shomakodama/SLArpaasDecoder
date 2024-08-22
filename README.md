@@ -2,8 +2,6 @@
 
 ## Overview
 
-This code is written and maintained by **Shoma Kodama** (The University of Tokyo; `shoma@hep.phys.s.u-tokyo.ac.jp`).
-
 This is for data taken with SLArpaas_test16_v1.NIU or SLArpaas_test16_v2.NIU.
 
 The DAQ code is stored in the different repository.
