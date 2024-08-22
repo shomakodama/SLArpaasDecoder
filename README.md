@@ -34,7 +34,7 @@ plotevent|saving waveform or not (1: save)
 
 </details>
 
-
+One python script `Decoder1ch.py"` is just reading a file and showing them in the terminal.
 
 
 
