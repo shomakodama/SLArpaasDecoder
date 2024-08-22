@@ -2,7 +2,7 @@
 
 ## Overview
 
-This is for data taken with SLArpaas_test16_v1.NIU or SLArpaas_test16_v2.NIU.
+This repository stores decoders for data taken with SLArpaas_test16_v1.NIU or SLArpaas_test16_v2.NIU.
 
 The DAQ code is stored in the different repository.
 Please refer to [SLArpaasDAQ](https://github.com/shomakodama/SLArpaasDAQ).
