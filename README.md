@@ -38,3 +38,26 @@ One python script `Decoder1ch.py` is just reading all lines and showing them in 
 
 
 
+
+
+## Output
+
+The outout root file has one TTree.
+The TTree has 8 branches.
+Click below to show these branches.
+
+<details>
+<summary>details</summary>
+
+name|description
+---|---
+length|sample length (int)
+timing|event timing (uint64_t)
+event|event number counting by the counter module (uint32_t)
+internalevent|event number counting by the digitizer module (uint32_t)
+ADCX|data points (int)
+eventflag|event flag (int)
+
+</details>
+
+
