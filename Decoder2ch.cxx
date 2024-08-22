@@ -56,8 +56,8 @@ int Decoder2ch(){
 
     int TDC_ns[lengths];
     for(int i=0; i<lengths; i++){
-        ADC0[i] = 0;
-        ADC1[i] = 0;
+        ADC0[i] = -1;
+        ADC1[i] = -1;
         TDC_ns[i] = i*8;
     }
 
@@ -130,8 +130,8 @@ int Decoder2ch(){
                     otree->Fill();
 
                     for(int i=0; i<lengths; i++){
-                        ADC0[i] = 0;
-                        ADC1[i] = 0;
+                        ADC0[i] = -1;
+                        ADC1[i] = -1;
                     }
                     timing = 0;
 

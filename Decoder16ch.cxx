@@ -92,22 +92,22 @@ int Decoder16ch(){
 
     int TDC_ns[lengths];
     for(int i=0; i<lengths; i++){
-        ADC0[i] = 0;
-        ADC1[i] = 0;
-        ADC2[i] = 0;
-        ADC3[i] = 0;
-        ADC4[i] = 0;
-        ADC5[i] = 0;
-        ADC6[i] = 0;
-        ADC7[i] = 0;
-        ADC8[i] = 0;
-        ADC9[i] = 0;
-        ADC10[i] = 0;
-        ADC11[i] = 0;
-        ADC12[i] = 0;
-        ADC13[i] = 0;
-        ADC14[i] = 0;
-        ADC15[i] = 0;
+        ADC0[i] = -1;
+        ADC1[i] = -1;
+        ADC2[i] = -1;
+        ADC3[i] = -1;
+        ADC4[i] = -1;
+        ADC5[i] = -1;
+        ADC6[i] = -1;
+        ADC7[i] = -1;
+        ADC8[i] = -1;
+        ADC9[i] = -1;
+        ADC10[i] = -1;
+        ADC11[i] = -1;
+        ADC12[i] = -1;
+        ADC13[i] = -1;
+        ADC14[i] = -1;
+        ADC15[i] = -1;
         TDC_ns[i] = i*8;
     }
 
@@ -239,22 +239,22 @@ int Decoder16ch(){
                     otree->Fill();
 
                     for(int i=0; i<lengths; i++){
-                        ADC0[i] = 0;
-                        ADC1[i] = 0;
-                        ADC2[i] = 0;
-                        ADC3[i] = 0;
-                        ADC4[i] = 0;
-                        ADC5[i] = 0;
-                        ADC6[i] = 0;
-                        ADC7[i] = 0;
-                        ADC8[i] = 0;
-                        ADC9[i] = 0;
-                        ADC10[i] = 0;
-                        ADC11[i] = 0;
-                        ADC12[i] = 0;
-                        ADC13[i] = 0;
-                        ADC14[i] = 0;
-                        ADC15[i] = 0;
+                        ADC0[i] = -1;
+                        ADC1[i] = -1;
+                        ADC2[i] = -1;
+                        ADC3[i] = -1;
+                        ADC4[i] = -1;
+                        ADC5[i] = -1;
+                        ADC6[i] = -1;
+                        ADC7[i] = -1;
+                        ADC8[i] = -1;
+                        ADC9[i] = -1;
+                        ADC10[i] = -1;
+                        ADC11[i] = -1;
+                        ADC12[i] = -1;
+                        ADC13[i] = -1;
+                        ADC14[i] = -1;
+                        ADC15[i] = -1;
                     }
                     timing = 0;
 
