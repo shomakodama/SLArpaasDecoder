@@ -36,6 +36,8 @@ int Decoder6ch(){
     TFile *ofile = new TFile(ofilename, "RECREATE"); // output file: need to change
     TTree *otree = new TTree("tree", "tree");
 
+    TDirectory *subD_waveform = ofile->mkdir("waveform");
+
     int length = lengths;
     uint64_t timing;
     uint32_t event;
@@ -143,6 +145,7 @@ int Decoder6ch(){
                         gr5->SetMarkerColor(6); // purple
                         gr5->Draw("P");
 
+                        subD_waveform->cd();
                         c1->Write(); // save to the root file
                     }
 
@@ -286,6 +289,7 @@ int Decoder6ch(){
         otree->Fill();
     }
 
+    ofile->cd();
     otree->Write();
 
     return 0;

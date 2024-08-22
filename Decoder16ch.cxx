@@ -42,6 +42,8 @@ int Decoder16ch(){
     TFile *ofile = new TFile(ofilename, "RECREATE"); // output file: need to change
     TTree *otree = new TTree("tree", "tree");
 
+    TDirectory *subD_waveform = ofile->mkdir("waveform");
+
     int length = lengths-1;
     uint64_t timing;
     uint32_t event;
@@ -85,8 +87,6 @@ int Decoder16ch(){
     otree->Branch("ADC14", ADC14, "ADC14[length]/I");
     otree->Branch("ADC15", ADC15, "ADC15[length]/I");
     otree->Branch("eventflag", &eventflag, "eventflag/I");
-
-    TDirectory *subD_waveform = ofile->mkdir("waveform");
 
 
 
