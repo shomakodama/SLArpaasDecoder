@@ -13,6 +13,8 @@
 
 
 
+// 9ch decoder (taking 16ch)
+
 const int lengths = 1248; // number of data points for each event
 const int interval = 8; // 8 ns (125 MHz)
 const uint64_t timing_offset = 0x100000000;
@@ -27,7 +29,7 @@ const TString ofilename = Form("root_linearity2/100ev_%dmV_%dns_ch%d.root", volt
 // const std::string fname = "data/caen_test15_v1_100Hz_8ch.dat"; // need to be changed
 // const TString ofilename = "root/caen_test15_v1_100Hz_8ch.root"; // need to be changed
 
-const int plotevent = 1; // save event or not (1: save)
+const int plotevent = 1; // number of saved waveform
 
 
 int DataClassification(int number, uint32_t data);
@@ -107,6 +109,8 @@ int Decoder9ch(){
 
     int ADC_1, ADC_2;
 
+    int savedevents=0;
+
     std::string tmp;
 
     if(!fs){
@@ -126,7 +130,7 @@ int Decoder9ch(){
 
             if(Data == 10){ // header!
 
-                if(event != -1){ // new event!
+                if(savedevents < plotevent){ // new event!
 
                     // draw the previous event
                     if(plotevent == 1){
@@ -172,6 +176,9 @@ int Decoder9ch(){
 
                         subD_waveform->cd();
                         c1->Write(); // save to the root file
+
+                        savedevents++;
+
                     }
 
                     // event check

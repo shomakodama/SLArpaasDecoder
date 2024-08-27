@@ -20,7 +20,7 @@ const uint64_t timing_offset = 0x100000000;
 const std::string fname = "data_rate/rate_4ch_1024.dat"; // need to be changed
 const TString ofilename = "root_rate/rate_4ch_1024.root"; // need to be changed
 
-const int plotevent = 1; // save event or not (1: save)
+const int plotevent = 1; // number of saved waveform
 
 
 int DataClassification(int number, uint32_t data);
@@ -85,6 +85,8 @@ int Decoder4ch(){
 
     int ADC_1, ADC_2;
 
+    int savedevents=0;
+
     std::string tmp;
 
     if(!fs){
@@ -107,7 +109,7 @@ int Decoder4ch(){
                 if(event != -1){ // new event!
 
                     // draw the previous event
-                    if(plotevent == 1){
+                    if(savedevents < plotevent){
 
                         double xlo = 0.;    // lower limit of x
                         double xhi = (double)lengths*interval;   // higher limit of x
@@ -135,6 +137,9 @@ int Decoder4ch(){
 
                         subD_waveform->cd();
                         c1->Write(); // save to the root file
+
+                        savedevents++;
+
                     }
 
                     // event check

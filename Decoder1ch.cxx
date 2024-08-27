@@ -13,14 +13,14 @@
 
 
 
-const int lengths = 512; // number of data points for each event
+const int lengths = 2048; // number of data points for each event
 const int interval = 8; // 8 ns (125 MHz)
 const uint64_t timing_offset = 0x100000000;
 
-const std::string fname = "data_SiPM4/SiPM8180.dat"; // need to be changed
-const TString ofilename = "root_SiPM4/SiPM8180.root"; // need to be changed
+const std::string fname = "data_SiPM6/SiPM8150_55V_2048_preamp1.dat"; // need to be changed
+const TString ofilename = "root_SiPM6/SiPM8150_55V_2048_preamp1.root"; // need to be changed
 
-const int plotevent = 0; // save event or not (1: save)
+const int plotevent = 1000; // number of saved waveform
 
 
 int DataClassification(int number, uint32_t data);
@@ -76,6 +76,8 @@ int Decoder1ch(){
 
     int ADC_1, ADC_2;
 
+    int savedevents=0;
+
     std::string tmp;
 
     if(!fs){
@@ -99,7 +101,7 @@ int Decoder1ch(){
                 if(event != -1){ // new event!
 
                     // draw the previous event
-                    if(plotevent == 1){
+                    if(savedevents < plotevent){
 
                         double xlo = 0.;    // lower limit of x
                         double xhi = (double)lengths*interval;   // higher limit of x
@@ -116,6 +118,9 @@ int Decoder1ch(){
                         gr->Draw("P");
                         subD_waveform->cd();
                         c1->Write(); // save to the root file
+
+                        savedevents++;
+                        
                     }
 
                     // event check
